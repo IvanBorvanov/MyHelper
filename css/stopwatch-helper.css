@@ -1,0 +1,66 @@
+.stopwatch-container {
+    width: 100%;
+    height: calc(100% - 48px);
+    margin: 0 auto;
+    background-color: #C3C3C3;
+    padding-top: 48px;
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #be375f;
+    padding: 20px 0px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+.wrapper-item { 
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.wrapper-item-title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.6em;
+    margin-bottom: 20px;
+}
+
+#seconds, #tens, .dots {
+    font-size: 2.6em;
+    font-weight: 700;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button-stopwatch {
+    border-radius: 5px;
+    background: #f5eb6d;
+    text-transform: uppercase;
+    color: #313866;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    /* width: 150px; */
+    border: none;
+    outline: none;
+    margin-right: 10px;
+
+    transition: all 0.3s linear;
+}
+
+.button-stopwatch:last-child {
+    margin-right: 0px;
+}
+
+
+.button-stopwatch:hover {
+    background: #ed8554;
+    color: #000; 
+}
+

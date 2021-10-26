@@ -1,0 +1,220 @@
+
+.todo-container {
+    width: 100%;
+    background-color: #4B4B4B;
+    height: calc(100% - 96px);
+    padding: 48px 0;
+}
+
+#todo {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+
+    background: #be375f;
+    border-radius: 10px;
+    box-shadow:  0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    text-transform: uppercase;
+    color:white;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+#pencil {
+    font-size: 20px;
+    padding: 10px 10px;
+    border-radius: 50%;
+    background: #a32e5100;
+
+    transition: 0.3s ease;
+}
+
+.inputStr {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+#pencil:hover {
+    background: #a32e52;
+}
+
+input {
+    background: #e5e5e5;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px ;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    padding-left: 30px;
+    border: none;
+    color: gray;
+    border-radius: 10px;
+
+    transition: 0.3s linear;
+}
+
+input:focus {
+    background: #fff;
+    border: none;
+    outline: none;
+    color: #000;
+}
+
+.todos-span {  
+    height: 50px;
+    width: 0;
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s linear;
+}
+
+i {
+    cursor: pointer;
+}
+
+.todos {
+    list-style-type: none;
+    margin: auto 20px;
+    overflow: auto;
+    border-radius: 10px;
+    background: #f7f7f7;
+    color: rgb(56, 53, 53);
+}
+
+ul {
+    margin: 0 auto;
+    max-height: calc(100% - 238px);
+}
+
+.todos-top {
+    max-height: calc(100% - 168px);
+}
+
+.todos li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; 
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 20px; 
+    padding-left: 30px;
+}
+
+.todos li:hover span {
+    opacity: 1.0;
+}
+
+.checked {
+    color: rgb(157, 157, 157);
+    text-decoration: line-through;
+    background:#e5e5e5;
+}
+
+.display {
+    display: none;  
+}
+
+.fa-pencil-alt {
+    float: right;
+    padding-top: 8px;
+}
+
+.fa-trash {
+    float: right;
+    color: rgb(56, 53, 53);
+    font-size: 20px;
+    padding: 15px 20px 0 20px;
+}
+
+/* BUTTONS */
+#todo-buttons {
+    text-align: center;
+    align-items: flex-end;
+    width: 450px;
+
+    position: absolute;
+    bottom:20px;
+    left: calc(50% - 225px);
+}
+
+.todo-button {
+    background-color: #ed8554;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 30px;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow:  0px 10px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    margin-right: 40px;
+}
+
+.todo-button:last-child {
+    margin-right: 0;
+}
+
+
+.todo-button:hover {
+    background-color: #f5eb6d;
+    color: #000;
+}
+
+/* OVERLAY */
+#overlay {
+    height: 100%;
+    width: 300px;
+    position: fixed; 
+    z-index: 100; 
+    right: -310px;
+    top: 0;
+    background-color: #be375f; 
+    /* background-color: rgba(0,0,0, 0.7);  */
+    overflow-y: hidden; 
+    transition: 0.3s ease; 
+    -webkit-transition:  0.3s;
+
+    box-shadow:  -10px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+#overlay .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+#overlay li{
+    padding: 0 20px;
+    font-size: 20px;
+    color: #000;
+    display: block;
+    text-align: left;
+}
+
+.tips {
+    position: relative;
+    /* top: 20%; */
+    width: 100%; 
+    margin-top: 50px;
+}
+
+.tips li:not(:last-child) {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!--Подключение стилей-->
+    <link rel="stylesheet" href="./css/Helper.css">
+    <link rel="stylesheet" href="./css/Todo-helper.css">
+    <link rel="stylesheet" href="./css/calculator-helper.css">
+    <link rel="stylesheet" href="./css/calendar-helper.css">
+    <link rel="stylesheet" href="./css/stopwatch-helper.css">
+    
+    
+    <title>My Helper</title>
+</head>
+<body>
+
+    <!--header-->
+    <header class="header">
+        <div class="container">
+            <div class="header-bar">
+                <div class="header-logo">my<i class="fas fa-dice-five"></i>helper</div>
+                <a href="#" class="header-nav">login / logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!--sidenav-->
+    <div class="sidenav">
+        <div class="helper-buttons">
+            
+            <button class="tablink" onclick="openPage('ToDo', this)" id="defaultOpen"><i class="fas fa-clipboard"></i>ToDo List</button>
+            
+            <button class="tablink" onclick="openPage('Calculator', this)"><i class="fas fa-calculator"></i>Calculator</button>
+            
+            <button class="tablink" onclick="openPage('Calendar', this)"><i class="fas fa-calendar-alt"></i>Calendar</button>
+            
+            <button class="tablink" onclick="openPage('Stopwatch', this)"><i class="fas fa-stopwatch"></i>Stopwatch</button>
+
+        </div>
+        
+        <div class="content">
+
+            <!--TODO LIST-->
+            <div id="ToDo" class="tabcontent">
+                <div class="todo-container">
+
+                    <div id = "todo">
+                        <h1>my task scheduler<i id="pencil" class="fas fa-pencil-alt"></i></h1>
+            
+                        <div class="inputStr">
+                            <input type = "text" placeholder="Add New Task...">
+                        </div>
+            
+                        <ul class="todos" id="todos">
+                            
+                            <li>pick up things from the laundry<span class="todos-span"><i class="fas fa-trash"></i></span></li>
+                            <li>kill the ducks<span class="todos-span"><i class="fas fa-trash"></i></span></li>
+                        </ul>
+            
+                        <div id= "todo-buttons">
+                            <button class="save todo-button">Save</button>
+                            <button class="clear todo-button">Clear</button>
+                            <button class="tipBtn todo-button">FAQ</button>
+                        </div>
+                    </div>
+
+                    <div id = "overlay">
+                        <div class="closeBtn"><i class="fas fa-times"></i></div>
+                        <ul class="tips">
+                            <li>Click on the pencil to hide or show input area</li>
+                            <li>Type text into input area and press enter to add todo to list</li>
+                            <li>Hover over the todo and click the on trash can to delete</li>
+                            <li>Click the clear button to clear all todos from list</li>
+                            <li>Click the Save button to save your todos to access them later even if you exit the browser </li>
+                        </ul>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+            <script src="./js/todo-helper.js"></script>
+
+            <!--CALCULATOR-->
+            <div id="Calculator" class="tabcontent">
+                <div class="calc-container">
+
+                    <div id="calculator">
+                        <div class="top">
+                            <div class="screen">0</div>
+                        </div>
+                        
+                        <div class="num-keys">
+                            <span class="clear">C</span>
+                            <span class="operator left_parenthesis">(</span>
+                            <span class="operator right_parenthesis">)</span>
+                            <span class="operator plus">+</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span class="operator">-</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span class="operator">x</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span class="operator">÷</span>
+                            <span>0</span>
+                            <span>.</span>
+                            <span class="eval">=</span>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            
+            <div id="Calendar" class="tabcontent">
+                <div class="calendar-container">
+                    <div id="month-calendar">
+                        
+                        <!-- Блок с заголовками (наименования месяца и года) и навигацией (на месяц вперед и назад) -->
+                        <ul class="month">
+                            <li class="prev"><i class="fas fa-angle-double-left"></i></li>
+                            <li class="next"><i class="fas fa-angle-double-right"></i></li>
+                            <li class="month-name"></li>
+                            <li class="year-name"></li>
+                        </ul>
+                        
+                        <!-- Блок дней недели-->
+                        <ul class="weekdays">
+                            <li>Пн</li>
+                            <li>Вт</li>
+                            <li>Ср</li>
+                            <li>Чт</li>
+                            <li>Пт</li>
+                            <li>Сб</li>
+                            <li>Вс</li>
+                        </ul>
+                        
+                        <!-- Табличная часть, дни месяца-->
+                        <ul class="days">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!--STOPWATCH-->
+            <div id="Stopwatch" class="tabcontent">
+                <div class="stopwatch-container">
+                    <div class="wrapper"> 
+                        <!-- <div class="wrapper-img">
+                            <img src="./img/stopwatch.png" alt="stopwatch">
+                        </div> -->
+                        <div class="wrapper-item">
+                            <h2 class="wrapper-item-title">Stopwatch</h2>
+                            <div class="wrapper-item-timer">
+                                <span id="seconds">00</span><span class="dots">:</span><span id="tens">00</span>
+                            </div>
+                        
+                            <!--buttons-->
+                            <div class="buttons">
+                                <button class="button-stopwatch" id="button-start">start</button>
+                                <button class="button-stopwatch" id="button-stop">stop</button>
+                                <button class="button-stopwatch" id="button-reset">reset</button>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+        
+
+    </div>
+    
+
+    <script src="./js/helper.js"></script>
+    <script src="./js/calculator-helper.js"></script>
+    <script src="./js/calendar-helper.js"></script>
+    <script src="./js/stopwatch-helper.js"></script>
+</body>
+</html>
